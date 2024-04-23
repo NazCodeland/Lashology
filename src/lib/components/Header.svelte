@@ -1,15 +1,13 @@
 <script>
 	import Logo from '$lib/components/Logo.svelte';
 	import Nav from '$lib/components/Nav.svelte';
+	import Hamburger from './Hamburger.svelte';
 </script>
 
-<header class="bg-blue-300 flex justify-between p-4 items-center">
+<header class="flex w-full justify-between">
 	<Logo />
-	<Nav />
+	<Hamburger />
 </header>
 
 <style>
-	header {
-		grid-column: fw;
-	}
 </style>
