@@ -5,7 +5,7 @@
 </script>
 
 <button
-	class="indent-10 select-none"
+	class="select-none indent-10"
 	on:click={() =>
 		showNavStore.update((val) => {
 			val = !val;

@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { fade, slide } from 'svelte/transition';
+	import { slide } from 'svelte/transition';
 	import Logo from './Logo.svelte';
-	import { cubicIn, cubicInOut, cubicOut } from 'svelte/easing';
+	import { cubicOut } from 'svelte/easing';
 	import { showNavStore } from '$lib/stores/showNavStore';
 
 	const links = [
@@ -30,24 +30,24 @@
 
 <div
 	bind:this={modal}
-	class=" select-none flex flex-col gap-8 whitespace-nowrap p-4 pt-8 border fixed -bottom-20 top-0 left-0
-w-full bg-gray-900/30 transition-all"
+	class=" fixed -bottom-20 left-0 top-0 flex w-full select-none flex-col gap-8 whitespace-nowrap border bg-gray-900/30
+p-4 pt-8 transition-all"
 >
 	<nav
 		in:slide={{ axis: 'x', easing: cubicOut }}
 		out:slide={{ axis: 'x', duration: 300 }}
-		class="transition-all flex flex-col gap-8 whitespace-nowrap p-4 pt-8 border fixed -bottom-20 top-0 left-0
-	w-[80vw] bg-[white] max-w-[340px]"
+		class="fixed -bottom-20 left-0 top-0 flex w-[80vw] max-w-[340px] flex-col gap-8 whitespace-nowrap border bg-[white]
+	p-4 pt-8 transition-all"
 	>
 		<Logo />
-		<ul class="text-sm flex flex-col gap-4 justify-evenly flex-wrap">
+		<ul class="flex flex-col flex-wrap justify-evenly gap-4 text-sm">
 			{#each links as link}
 				<li
-					class="hover:outline cursor-pointer border rounded-md {link.name == 'Book Now'
+					class="cursor-pointer rounded-md border hover:outline {link.name == 'Book Now'
 						? 'bg-gray-900 text-gray-50 hover:outline-slate-900'
 						: ''}"
 				>
-					<a class="w-full h-full block p-4" href={link.href}>{link.name.toUpperCase()}</a>
+					<a class="block h-full w-full p-4" href={link.href}>{link.name.toUpperCase()}</a>
 				</li>
 			{/each}
 		</ul>
