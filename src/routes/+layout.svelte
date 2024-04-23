@@ -4,7 +4,7 @@
 	import '../app.css';
 </script>
 
-<main class="relative flex flex-wrap gap-24 p-4 pb-40 pt-8">
+<main class="relative flex flex-wrap gap-24 p-4 pb-52 pt-8">
 	<Header />
 	<slot />
 	<Fab />

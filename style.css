@@ -1,0 +1,11 @@
+/* div {
+	inline-size: 40px;
+	block-size: 40px;
+	background-color: orange;
+}
+
+/* Add this to your existing CSS or create a new rule */
+::view-transition-new {
+	transition: transform 0.3s ease; /* Adjust duration and easing as needed */
+	transform: translate(100px, 50px); /* Set the desired translation */
+} */
