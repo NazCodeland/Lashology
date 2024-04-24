@@ -3,8 +3,7 @@
 	import Logo from './Logo.svelte';
 	import { cubicOut } from 'svelte/easing';
 	import { showNavStore } from '$lib/stores/showNavStore';
-	import { tick } from 'svelte';
-	import type { MousePointerClick } from 'lucide-svelte';
+	import { viewTransition } from './utilities';
 
 	const links = [
 		{ name: 'Home', href: '/' },
@@ -21,18 +20,16 @@
 		{ name: 'Phone', href: 'tel:7782389401' }
 	];
 
-	function updateState() {}
+	function updateDOMState(event: MouseEvent) {
+		if (modal && modal.contains(event?.target as HTMLElement)) {
+			console.log('running');
+			showNavStore.set(false);
+		}
+	}
+
 	let modal: HTMLElement;
-	function handleClickOutside(event) {
-		if (!document.startViewTransition) {
-			updateState();
-			return;
-		} else
-			document.startViewTransition(() => {
-				if (modal && modal.contains(event?.target)) {
-					showNavStore.set(false);
-				}
-			});
+	function handleClickOutside(event: MouseEvent) {
+		viewTransition({ updateDOMState: () => updateDOMState(event) });
 	}
 </script>
 
@@ -40,14 +37,14 @@
 
 <div
 	bind:this={modal}
-	class=" fixed -bottom-20 left-0 top-0 flex w-full select-none flex-col gap-8 whitespace-nowrap border
-	bg-gray-900/30 p-4 pt-8 transition-all"
+	class="fixed -bottom-20 left-0 top-0 flex w-full select-none flex-col gap-8 whitespace-nowrap border bg-gray-900/10
+	p-4 pt-8 transition-all"
 >
 	<nav
 		in:slide={{ axis: 'x', easing: cubicOut }}
 		out:slide={{ axis: 'x', duration: 300 }}
-		class="fixed -bottom-20 left-0 top-0 flex w-[80vw] max-w-[340px] flex-col gap-8 whitespace-nowrap border
-		bg-[white] p-4 pt-8 transition-all"
+		class="pointer-events-none fixed -bottom-20 left-0 top-0 flex w-[80vw] max-w-[340px] flex-col gap-8 whitespace-nowrap
+		border bg-[white] p-4 pt-8 transition-all"
 	>
 		<Logo />
 		<ul class="flex flex-col flex-wrap justify-evenly gap-4 text-sm">

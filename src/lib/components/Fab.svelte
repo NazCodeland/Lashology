@@ -1,6 +1,4 @@
 <script>
-	import cart from '$lib/icons/cart.svg';
-	import phone from '$lib/icons/phone.svg';
 	import { showNavStore } from '$lib/stores/showNavStore';
 </script>
 

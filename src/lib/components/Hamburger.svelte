@@ -1,28 +1,21 @@
 <script lang="ts">
-	import Nav from './Nav.svelte';
 	import { showNavStore } from '$lib/stores/showNavStore';
 	import Hamburger from '../icons/hamburger.svg';
+	import Nav from './Nav.svelte';
+	import { viewTransition } from './utilities';
 
-	function updateState() {}
+	function updateDOMState() {
+		showNavStore.update((val) => (val = !val));
+	}
 </script>
 
 <button
 	class="select-none indent-10"
 	on:click={() => {
-		if (!document.startViewTransition) {
-			updateState();
-			return;
-		} else
-			document.startViewTransition(() => {
-				showNavStore.update((val) => {
-					val = !val;
-					console.log('val', val);
-					return val;
-				});
-			});
+		viewTransition({ updateDOMState });
 	}}
 >
-	<img class="w-10" src={Hamburger} alt="" />
+	<img src={Hamburger} alt="" />
 </button>
 
 {#if $showNavStore}
