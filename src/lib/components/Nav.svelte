@@ -21,33 +21,36 @@
 	];
 
 	function updateDOMState(event: MouseEvent) {
-		if (modal && modal.contains(event?.target as HTMLElement)) {
-			console.log('running');
-			showNavStore.set(false);
-		}
+		showNavStore.set(false);
 	}
 
-	let modal: HTMLElement;
+	let nav: HTMLElement;
+	let ul: HTMLElement;
 	function handleClickOutside(event: MouseEvent) {
-		viewTransition({ updateDOMState: () => updateDOMState(event) });
+		if (event.target !== nav && event.target !== ul) {
+			viewTransition({ updateDOMState: () => updateDOMState(event) });
+		}
+		event.stopPropagation;
 	}
 </script>
 
-<svelte:window on:click={handleClickOutside} />
+<!-- svelte-ignore a11y-no-static-element-interactions -->
+<!-- svelte-ignore a11y-click-events-have-key-events -->
 
 <div
-	bind:this={modal}
+	on:click={handleClickOutside}
 	class="fixed -bottom-20 left-0 top-0 flex w-full select-none flex-col gap-8 whitespace-nowrap border bg-gray-900/10
 	p-4 pt-8 transition-all"
 >
 	<nav
+		bind:this={nav}
 		in:slide={{ axis: 'x', easing: cubicOut }}
 		out:slide={{ axis: 'x', duration: 300 }}
-		class="pointer-events-none fixed -bottom-20 left-0 top-0 flex w-[80vw] max-w-[340px] flex-col gap-8 whitespace-nowrap
+		class="fixed -bottom-20 left-0 top-0 flex w-[80vw] max-w-[340px] flex-col gap-8 whitespace-nowrap
 		border bg-[white] p-4 pt-8 transition-all"
 	>
 		<Logo />
-		<ul class="flex flex-col flex-wrap justify-evenly gap-4 text-sm">
+		<ul bind:this={ul} class="flex flex-col flex-wrap justify-evenly gap-4 text-sm">
 			{#each links as link}
 				{#if link.name == 'Phone' && $showNavStore}
 					<li
