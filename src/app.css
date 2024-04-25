@@ -28,8 +28,17 @@ h2 {
 	font-family: 'Rosarivo', cursive;
 	font-style: normal;
 }
-Add this to your existing CSS or create a new rule ::view-transition-old(nav-fab-animation),
+
+/* 
+::view-transition
+└─ ::view-transition-group(root)
+  └─ ::view-transition-image-pair(root)
+    ├─ ::view-transition-old(root)
+    └─ ::view-transition-new(root) */
+
+::view-transition-old(nav-fab-animation),
 ::view-transition-new(nav-fab-animation) {
+	animation-duration: 2s;
 }
 
 /* show this font to client so they can decide between  'taviraj-semibold' vs 'abril-fatface-regular'*/

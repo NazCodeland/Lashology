@@ -4,11 +4,16 @@
 	import '../app.css';
 </script>
 
-<main class="relative flex flex-wrap gap-24 p-4 pb-52 pt-8">
+<main class="select-none gap-24 p-4 pb-52 pt-8">
 	<Header />
 	<slot />
+	<!-- "Fab" component is in a fixed position -->
 	<Fab />
 </main>
 
 <style>
+	main {
+		display: grid;
+		grid-template-rows: auto 1fr auto;
+	}
 </style>

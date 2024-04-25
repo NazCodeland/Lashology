@@ -52,18 +52,17 @@
 		<Logo />
 		<ul bind:this={ul} class="flex flex-col flex-wrap justify-evenly gap-4 text-sm">
 			{#each links as link}
-				{#if link.name == 'Phone' && $showNavStore}
+				{#if (link.name == 'Phone' && $showNavStore) || (link.name == 'Book Now' && $showNavStore)}
 					<li
-						class="phone cursor-pointer rounded-md border bg-gray-900 text-gray-50 hover:outline hover:outline-slate-900"
+						class="{link.name == 'Phone' ? 'phone' : 'booking'} cursor-pointer rounded-md border
+						bg-gray-900 text-gray-50 hover:outline hover:outline-slate-900"
 					>
-						<a class="block h-full w-full p-4" href={link.href}>778-2389-401</a>
+						<a class="block h-full w-full p-4" href={link.href}
+							>{link.name == 'Phone' ? '778-2389-401' : 'Book Now'}</a
+						>
 					</li>
 				{:else if $showNavStore}
-					<li
-						class="cursor-pointer rounded-md border hover:outline {link.name == 'Book Now'
-							? 'booking bg-gray-900 text-gray-50 hover:outline-slate-900'
-							: ''}"
-					>
+					<li class="cursor-pointer rounded-md border hover:outline">
 						<a class="block h-full w-full p-4" href={link.href}>{link.name.toUpperCase()}</a>
 					</li>
 				{/if}
