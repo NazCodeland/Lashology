@@ -10,6 +10,11 @@ export default {
         "primary": "#30D5C8",
         "secondary": "#EED202",
         "tertiary": "#FF4500",
+      },
+      screens: {
+        phone: '320px', // sm
+        tablet: '640px', // md
+        desktop: '1024px', // lg 
       }
     }
   }

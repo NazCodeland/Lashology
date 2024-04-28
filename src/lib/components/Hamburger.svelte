@@ -13,8 +13,7 @@
 	class="select-none indent-10"
 	on:click={() => {
 		viewTransition({ updateDOMState });
-	}}
->
+	}}>
 	<img src={Hamburger} alt="" />
 </button>
 

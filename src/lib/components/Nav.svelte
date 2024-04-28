@@ -16,8 +16,7 @@
 			href: 'https://www.fresha.com/a/lashology-ottawa-225-metcalfe-street-6th-floor-q9vdcocy/booking'
 		},
 		{ name: 'About Us', href: '/about' },
-		{ name: 'Contact', href: '/contact' },
-		{ name: 'Phone', href: 'tel:7782389401' }
+		{ name: 'Contact', href: '/contact' }
 	];
 
 	function updateDOMState(event: MouseEvent) {
@@ -30,7 +29,6 @@
 		if (event.target !== nav && event.target !== ul) {
 			viewTransition({ updateDOMState: () => updateDOMState(event) });
 		}
-		event.stopPropagation;
 	}
 </script>
 
@@ -39,43 +37,29 @@
 
 <div
 	on:click={handleClickOutside}
-	class="fixed -bottom-20 left-0 top-0 flex w-full select-none flex-col gap-8 whitespace-nowrap border bg-gray-900/10
-	p-4 pt-8 transition-all"
->
+	class="fixed -bottom-20 left-0 top-0 z-20 flex w-full select-none flex-col gap-8 whitespace-nowrap border
+	bg-gray-900/50 p-4 transition-all">
 	<nav
 		bind:this={nav}
 		in:slide={{ axis: 'x', easing: cubicOut }}
 		out:slide={{ axis: 'x', duration: 300 }}
 		class="fixed -bottom-20 left-0 top-0 flex w-[80vw] max-w-[340px] flex-col gap-8 whitespace-nowrap
-		border bg-[white] p-4 pt-8 transition-all"
-	>
+		border bg-[white] p-4 transition-all">
 		<Logo />
 		<ul bind:this={ul} class="flex flex-col flex-wrap justify-evenly gap-4 text-sm">
 			{#each links as link}
-				{#if (link.name == 'Phone' && $showNavStore) || (link.name == 'Book Now' && $showNavStore)}
+				{#if link.name == 'Book Now' && $showNavStore}
 					<li
-						class="{link.name == 'Phone' ? 'phone' : 'booking'} cursor-pointer rounded-md border
-						bg-gray-900 text-gray-50 hover:outline hover:outline-slate-900"
-					>
-						<a class="block h-full w-full p-4" href={link.href}
-							>{link.name == 'Phone' ? '778-2389-401' : 'Book Now'}</a
-						>
+						class="nav-fab-viewAPI cursor-pointer rounded-md border
+						bg-gray-900 text-gray-50 hover:outline hover:outline-slate-900">
+						<a class="block h-full w-full p-4" href={link.href}>Book Now</a>
 					</li>
 				{:else if $showNavStore}
 					<li class="cursor-pointer rounded-md border hover:outline">
-						<a class="block h-full w-full p-4" href={link.href}>{link.name.toUpperCase()}</a>
+						<a class="block h-full w-full px-4 py-3" href={link.href}>{link.name.toUpperCase()}</a>
 					</li>
 				{/if}
 			{/each}
 		</ul>
 	</nav>
 </div>
-
-<style lang="postcss">
-	.phone {
-		view-transition-name: nav-fab-animation-phone;
-	}
-	.booking {
-		view-transition-name: nav-fab-animation-booking;
-	}
-</style>

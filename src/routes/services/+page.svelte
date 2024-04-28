@@ -2,7 +2,6 @@
 	const services = [
 		{
 			image: '/services/eyeLashes.jpg',
-			// image: '/services/eyelash.png',
 			name: 'EYELASH EXTENSIONS',
 			serviceList: [
 				{ name: 'LASH REMOVAL', price: 30, discount: '' },
@@ -19,7 +18,7 @@
 			]
 		},
 		{
-			image: '/services/whitening.png',
+			image: '/services/eyeLashes.jpg',
 			name: 'TEETH WHITENING & TOOTH GEMS',
 			serviceList: [
 				{ name: 'SINGLE TOOTH GEM', price: 60, discount: '' },
@@ -32,7 +31,7 @@
 			]
 		},
 		{
-			image: '/services/eyelash.png',
+			image: '/services/eyeLashes.jpg',
 			name: 'LASH LIFT & BROW LAMINATION',
 			serviceList: [
 				{ name: 'BROW WAX - CLEAN UP ONLY', price: 25, discount: '' },
@@ -50,12 +49,8 @@
 	<h1 class="w-full bg-slate-50 py-4 text-center text-2xl">SERVICES</h1>
 	<div class="flex flex-col gap-20">
 		{#each services as category (category.name)}
-			<div class="flex flex-col gap-6">
-				<img
-					class="m-auto mb-4 inline-block h-[300px] w-[300px] rounded-full object-cover outline hover:scale-150"
-					src={category.image}
-					alt=""
-				/>
+			<div class="flex flex-col gap-10">
+				<img class="rounded-full outline hover:scale-150" src={category.image} alt="" />
 				<section class="flex flex-col gap-1">
 					<h2 class="mb-2 text-center text-2xl">{category.name}</h2>
 					<hr class=" mb-2 border border-gray-400" />
@@ -78,6 +73,3 @@
 		{/each}
 	</div>
 </section>
-
-<style lang="css">
-</style>

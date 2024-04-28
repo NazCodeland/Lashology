@@ -1,28 +1,22 @@
 <script>
+	import { page } from '$app/stores';
 	import { showNavStore } from '$lib/stores/showNavStore';
+	$: route = $page.route.id;
 </script>
 
+<!-- TODO: Fab should only be the button and the bar that contains
+the Fab and other info should be separated -->
 {#if !$showNavStore}
-	<div class="fixed bottom-14 right-14 flex select-none flex-col gap-2">
-		<button class="booking rounded-lg bg-gray-900 px-4 py-3 text-center text-gray-50">
-			<a
-				href="https://www.fresha.com/a/lashology-ottawa-225-metcalfe-street-6th-floor-q9vdcocy/booking"
-			>
-				Book now
-			</a>
-		</button>
-
-		<button class="phone rounded-lg bg-gray-900 px-4 py-3 text-center text-gray-50">
-			<a href="tel:7782389401">778-238-9401</a>
-		</button>
+	<div
+		class="fixed bottom-0 flex w-full items-center justify-between bg-white p-4 outline outline-gray-200">
+		<p class="text-sm text-gray-500">
+			24 <a class={route == '/services' ? '' : 'underline'} href="/services">services</a> available
+		</p>
+		<a
+			href="https://www.fresha.com/a/lashology-ottawa-225-metcalfe-street-6th-floor-q9vdcocy/booking"
+			class="nav-fab-viewAPI select-none rounded-lg bg-gray-900 px-4 py-3
+	text-center text-white">
+			Book now
+		</a>
 	</div>
 {/if}
-
-<style>
-	.phone {
-		view-transition-name: nav-fab-animation-phone;
-	}
-	.booking {
-		view-transition-name: nav-fab-animation-booking;
-	}
-</style>
