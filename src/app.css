@@ -82,10 +82,6 @@ h2 {
       └─ ::view-transition-new(figure-caption)
 */
 
-.fix-viewAPI {
-	view-transition-name: fix-viewAPI;
-}
-
 .fab-viewAPI {
 	view-transition-name: fab-viewAPI;
 }
@@ -93,22 +89,3 @@ h2 {
 .promotion-viewAPI {
 	view-transition-name: promotion-viewAPI;
 }
-
-/* @keyframes slide-in {
-	0% {
-		transform: translateY(-100%);
-	}
-	100% {
-		transform: translateY(0);
-	}
-} */
-/* ::view-transition-old(promotion-viewAPI),
-::view-transition-new(promotion-viewAPI) {
-	animation: slide-in 5s ease-out forwards;
-} */
-
-/* ::view-transition-old(promotion-viewAPI),
-::view-transition-new(promotion-viewAPI) {
-	opacity:0;
-	// or whatever style
-} */

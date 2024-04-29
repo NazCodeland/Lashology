@@ -11,8 +11,11 @@
 
 {#if showPromotion}
 	<article
-		class="flex items-center justify-between gap-8 rounded-b-2xl outline outline-1 outline-gray-900
-		{minimizePromotion ? 'rounded-2xl transition-all' : 'flex-col self-end rounded-md p-2'}">
+		class="flex items-center justify-between gap-8 rounded-b-2xl
+		outline outline-1 outline-gray-900 transition-all
+		{minimizePromotion
+			? 'rounded-2xl delay-[200ms]'
+			: 'flex-col self-end rounded-md p-2 delay-[250ms] '}">
 		<header
 			class="shrink-0 p-1
 		{minimizePromotion ? 'order-2' : 'self-end'}">
@@ -67,10 +70,10 @@
 			</div>
 		{/if}
 
-		<footer class="w-full">
+		<footer class="h-full w-full">
 			<button
 				class="
-				{$showNavStore ? '' : 'promotion-viewAPI'}  
+				{$showNavStore ? '' : 'promotion-viewAPI h-full'}  
 				btn btn-primary w-full !rounded-2xl">
 				Claim now</button>
 		</footer>
