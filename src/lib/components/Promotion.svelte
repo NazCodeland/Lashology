@@ -12,18 +12,24 @@
 {#if showPromotion}
 	<article
 		class="flex items-center justify-between gap-8 rounded-b-2xl
-		outline outline-1 outline-gray-900 transition-all
+		outline outline-1 outline-gray-900 transition-[padding]
 		{minimizePromotion
-			? 'rounded-2xl delay-[200ms]'
-			: 'flex-col self-end rounded-md p-2 delay-[250ms] '}">
+			? 'rounded-2xl delay-[400ms]'
+			: 'flex-col self-end rounded-md p-2 delay-0 duration-[0ms] '}">
 		<header
 			class="shrink-0 p-1
 		{minimizePromotion ? 'order-2' : 'self-end'}">
 			<!-- minimize and close promotion -->
-
+			<!-- minimize button -->
 			<button
 				on:click={() => {
-					viewTransition({ updateDOMState: () => (minimizePromotion = !minimizePromotion) });
+					if (minimizePromotion) {
+						minimizePromotion = !minimizePromotion;
+					} else {
+						viewTransition({
+							updateDOMState: () => (minimizePromotion = !minimizePromotion)
+						});
+					}
 				}}>
 				<svg
 					class="group-active:fill-white"
@@ -39,6 +45,7 @@
 				</svg>
 			</button>
 
+			<!-- close button -->
 			<button
 				on:click={() => (showPromotion = false)}
 				class="group self-end rounded-md p-2 text-2xl hover:bg-black"
@@ -73,8 +80,8 @@
 		<footer class="h-full w-full">
 			<button
 				class="
-				{$showNavStore ? '' : 'promotion-viewAPI h-full'}  
-				btn btn-primary w-full !rounded-2xl">
+				{$showNavStore ? '' : 'promotion-viewAPI'}  
+				btn btn-primary h-full w-full !rounded-2xl">
 				Claim now</button>
 		</footer>
 	</article>

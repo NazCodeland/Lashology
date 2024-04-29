@@ -5,6 +5,7 @@
     "tailwindcss"
   ],
   "cSpell.ignoreWords": [
-    "METCALFE"
+    "METCALFE",
+    "dontTransition"
   ]
 }
