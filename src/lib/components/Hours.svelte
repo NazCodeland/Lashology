@@ -11,8 +11,7 @@
 </script>
 
 <section
-	class="flex w-full max-w-[360px] flex-col gap-4 rounded-md p-4 outline outline-1 outline-[var(--theme-color-primary)]"
->
+	class="flex w-full max-w-[360px] flex-col gap-4 rounded-md p-4 outline outline-1 outline-[var(--theme-color-primary)]">
 	<h1 class=" text-center font-bold">BUSINESS HOURS</h1>
 	<hr class="border border-[var(--theme-color-primary)]" />
 	<div class="flex justify-between">
@@ -40,6 +39,6 @@
 
 <style lang="css">
 	.highlight {
-		color: theme(colors.theme-secondary);
+		color: theme(colors.secondary);
 	}
 </style>

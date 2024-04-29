@@ -2,6 +2,7 @@
 	import { slide } from 'svelte/transition';
 	import { viewTransition } from './utilities';
 	import { cubicOut } from 'svelte/easing';
+	import { showNavStore } from '$lib/stores/showNavStore';
 
 	let minimizePromotion: boolean = false;
 	let showPromotion: boolean = true;
@@ -13,12 +14,12 @@
 		class="
 		flex items-center justify-between gap-8 rounded-b-2xl outline outline-1
 		outline-gray-900
-		{minimizePromotion ? 'rounded-2xl outline-none' : 'flex-col self-end rounded-md'}
-		">
+		{minimizePromotion ? 'rounded-2xl transition-all' : 'flex-col self-end rounded-md'}">
 		<header
 			class="shrink-0 p-1
 		{minimizePromotion ? 'order-2' : 'self-end'}">
 			<!-- minimize and close promotion -->
+
 			<button
 				on:click={() => {
 					viewTransition({ updateDOMState: () => (minimizePromotion = !minimizePromotion) });
@@ -36,6 +37,7 @@
 					</path>
 				</svg>
 			</button>
+
 			<button
 				on:click={() => (showPromotion = false)}
 				class="group self-end rounded-md p-2 text-2xl hover:bg-black"
@@ -68,7 +70,7 @@
 		{/if}
 
 		<footer class="w-full">
-			<button class="button-secondary">Claim now</button>
+			<button class="{$showNavStore ? '' : 'promotion-viewAPI'} button-secondary">Claim now</button>
 		</footer>
 	</article>
 {/if}

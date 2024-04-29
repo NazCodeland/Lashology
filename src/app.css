@@ -34,6 +34,13 @@ h2 {
 	font-weight: 400;
 	font-style: normal;
 }
+
+/* show this font to client so they can decide between  'taviraj-semibold' vs 'abril-fatface-regular'*/
+/* .taviraj-semibold {
+	font-family: 'Taviraj', serif;
+	font-weight: 600;
+	font-style: normal;
+} */
 /* ------------------------------------------------------- */
 
 /* ELEMENTS */
@@ -76,13 +83,33 @@ h2 {
       └─ ::view-transition-new(figure-caption)
 */
 
-/* show this font to client so they can decide between  'taviraj-semibold' vs 'abril-fatface-regular'*/
-/* .taviraj-semibold {
-	font-family: 'Taviraj', serif;
-	font-weight: 600;
-	font-style: normal;
+.fix-viewAPI {
+	view-transition-name: fix-viewAPI;
+}
+
+.fab-viewAPI {
+	view-transition-name: fab-viewAPI;
+}
+
+.promotion-viewAPI {
+	view-transition-name: promotion-viewAPI;
+}
+
+/* @keyframes slide-in {
+	0% {
+		transform: translateY(-100%);
+	}
+	100% {
+		transform: translateY(0);
+	}
+} */
+/* ::view-transition-old(promotion-viewAPI),
+::view-transition-new(promotion-viewAPI) {
+	animation: slide-in 5s ease-out forwards;
 } */
 
-.nav-fab-viewAPI {
-	view-transition-name: nav-fab-viewAPI;
-}
+/* ::view-transition-old(promotion-viewAPI),
+::view-transition-new(promotion-viewAPI) {
+	opacity:0;
+	// or whatever style
+} */
