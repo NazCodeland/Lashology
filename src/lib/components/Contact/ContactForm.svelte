@@ -50,8 +50,7 @@
 			type="text"
 			name="name"
 			required
-			class="rounded-md px-3 py-2 font-semibold text-slate-950 outline-none focus:shadow-glow"
-		/>
+			class="focus:shadow-glow rounded-md px-3 py-2 font-semibold text-slate-950 outline-none" />
 	</label>
 
 	<label for="email" class="flex flex-col gap-0.5">
@@ -61,8 +60,7 @@
 			type="email"
 			name="email"
 			required
-			class=" rounded-md px-3 py-2 font-semibold text-slate-950 outline-none focus:shadow-glow"
-		/>
+			class=" focus:shadow-glow rounded-md px-3 py-2 font-semibold text-slate-950 outline-none" />
 	</label>
 
 	<label for="message" class="flex flex-col gap-0.5">
@@ -72,7 +70,7 @@
 			name="message"
 			required
 			rows="5"
-			class="rounded-md border px-3 py-2 font-semibold text-slate-950 outline-none focus:shadow-glow"
+			class="focus:shadow-glow rounded-md border px-3 py-2 font-semibold text-slate-950 outline-none"
 		></textarea>
 	</label>
 
@@ -86,8 +84,7 @@
 
 	<button
 		type="submit"
-		class="shadow-sm inline-flex w-full justify-center rounded-md border px-4 py-2 text-sm font-medium"
-	>
+		class="inline-flex w-full justify-center rounded-md border px-4 py-2 text-sm font-medium shadow-sm">
 		Send Message
 	</button>
 </form>

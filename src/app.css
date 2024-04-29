@@ -44,27 +44,26 @@ h2 {
 /* ------------------------------------------------------- */
 
 /* ELEMENTS */
-.button-tertiary {
-	inline-size: 100%;
-	border-radius: 16px;
-	background-color: theme(colors.gray.900);
+
+.btn {
+	border-radius: 8px;
 	padding-inline: 16px;
-	padding-block: 12px;
+	padding-block: 10px;
 	user-select: none;
 	text-align: center;
+}
+
+.btn-primary {
+	outline: 1px solid theme(colors.gray.900);
+}
+
+.btn-secondary {
+	background-color: theme(colors.slate.700);
 	color: theme(colors.white);
 }
 
-.button-secondary {
-	position: relative;
-	z-index: -10;
-	inline-size: 100%;
-	border-radius: 16px;
-	background-color: theme(colors.slate.700);
-	padding-inline: 16px;
-	padding-block: 12px;
-	user-select: none;
-	text-align: center;
+.btn-tertiary {
+	background-color: theme(colors.gray.900);
 	color: theme(colors.white);
 }
 

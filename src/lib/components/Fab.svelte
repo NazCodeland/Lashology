@@ -14,8 +14,7 @@ the Fab and other info should be separated -->
 		</p>
 		<a
 			href="https://www.fresha.com/a/lashology-ottawa-225-metcalfe-street-6th-floor-q9vdcocy/booking"
-			class="fab-viewAPI select-none rounded-lg bg-gray-900 px-4 py-3
-	text-center text-white">
+			class="nav-fab-viewAPI btn btn-tertiary">
 			Book now
 		</a>
 	</div>
