@@ -15,7 +15,7 @@
 		outline outline-1 outline-gray-900 transition-[padding]
 		{minimizePromotion
 			? 'rounded-2xl delay-[400ms]'
-			: 'flex-col self-end rounded-md p-2 delay-0 duration-[0ms] '}">
+			: 'flex-col self-end rounded-md p-2 delay-0 duration-0 '}">
 		<header
 			class="shrink-0 p-1
 		{minimizePromotion ? 'order-2' : 'self-end'}">
@@ -66,11 +66,11 @@
 		{#if !minimizePromotion}
 			<div class=" text-center text-lg">
 				<!-- attention grabber  -->
-				<h2 class="mb-8 rounded-sm border-8 py-4 text-4xl font-extrabold">
+				<p class="mb-8 rounded-sm border-8 py-4 text-4xl font-extrabold">
 					FREE <br />
 					LASH <br />
 					BOTOX
-				</h2>
+				</p>
 				<!-- promotion details -->
 				<p class="mb-2 px-4">Book your lash lift and get a free lash botox treatment!</p>
 				<p class="mb-4 px-4">This offer is valid from May 1st to May 31st.</p>

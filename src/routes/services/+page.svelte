@@ -45,8 +45,8 @@
 	];
 </script>
 
-<section class="flex flex-col gap-20">
-	<h1 class="w-full bg-slate-50 py-4 text-center text-2xl">SERVICES</h1>
+<article class="flex flex-col gap-20">
+	<h1>SERVICES</h1>
 	<div class="flex flex-col gap-20">
 		{#each services as category (category.name)}
 			<div class="flex flex-col gap-10">
@@ -72,4 +72,4 @@
 			</div>
 		{/each}
 	</div>
-</section>
+</article>
