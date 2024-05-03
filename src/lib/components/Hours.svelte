@@ -39,6 +39,6 @@
 
 <style lang="css">
 	.highlight {
-		color: theme(colors.secondary);
+		font-weight: 700;
 	}
 </style>

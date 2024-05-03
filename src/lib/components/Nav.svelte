@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { slide } from 'svelte/transition';
 	import Logo from './Logo.svelte';
-	import { cubicIn, cubicOut } from 'svelte/easing';
+	import { cubicOut } from 'svelte/easing';
 	import { showNavStore } from '$lib/stores/showNavStore';
 	import { viewTransition } from './utilities';
 

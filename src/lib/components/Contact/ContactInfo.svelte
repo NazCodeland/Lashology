@@ -5,16 +5,16 @@
 	import instagramIcon from '$lib/icons/instagram.svg';
 </script>
 
-<address class="">
-	<ul class="flex flex-col gap-8 pb-16 w-full">
+<address>
+	<ul class="flex flex-col gap-8">
 		<li>
 			<a
-				class="w-full flex items-center gap-8"
+				class="flex w-full items-center gap-8"
 				href="https://maps.google.com/?q=85+Clarence+St,+Ottawa+ON+K1N+5P5"
-				target="_blank"
-			>
+				target="_blank">
 				<img src={locationIcon} alt="" aria-label="location icon" />
-				225 METCALFE STREET 6TH FLOOR, UNIT#103 OTTAWA, ONTARIO  K2P 1P9
+				225 METCALFE STREET 6TH FLOOR, UNIT#103 <br />
+				OTTAWA, ONTARIO  K2P 1P9
 			</a>
 		</li>
 		<li>
@@ -32,8 +32,7 @@
 				class="flex items-center gap-8"
 				href="https://www.instagram.com/saigonottawa/"
 				target="_blank"
-				rel="noopener"
-			>
+				rel="noopener">
 				<img src={instagramIcon} alt="" aria-label="instagram icon" /> @renaylashlab
 			</a>
 		</li>

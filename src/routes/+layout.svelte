@@ -5,17 +5,13 @@
 	import '../app.css';
 </script>
 
-<Header />
-<main class="select-none gap-24 p-4 pb-52 pt-8">
+<main class="m-auto flex max-w-fw select-none flex-wrap justify-center gap-24 p-4 pb-40 pt-8">
+	<Header />
 	<Promotion />
 	<slot />
 	<!-- "Fab" component is in a fixed position -->
+	<Fab />
 </main>
-<Fab />
 
 <style>
-	main {
-		display: grid;
-		grid-template-rows: auto 1fr auto;
-	}
 </style>

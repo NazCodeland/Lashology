@@ -1,7 +1,7 @@
 <script>
 	const services = [
 		{
-			image: '/services/eyeLashes.jpg',
+			image: '/services/eye_lash_1.jpg',
 			name: 'EYELASH EXTENSIONS',
 			serviceList: [
 				{ name: 'LASH REMOVAL', price: 30, discount: '' },
@@ -18,7 +18,7 @@
 			]
 		},
 		{
-			image: '/services/eyeLashes.jpg',
+			image: '/services/eye_lash_1.jpg',
 			name: 'TEETH WHITENING & TOOTH GEMS',
 			serviceList: [
 				{ name: 'SINGLE TOOTH GEM', price: 60, discount: '' },
@@ -31,7 +31,7 @@
 			]
 		},
 		{
-			image: '/services/eyeLashes.jpg',
+			image: '/services/eye_lash_1.jpg',
 			name: 'LASH LIFT & BROW LAMINATION',
 			serviceList: [
 				{ name: 'BROW WAX - CLEAN UP ONLY', price: 25, discount: '' },
@@ -45,12 +45,16 @@
 	];
 </script>
 
-<article class="flex flex-col gap-20">
+<article class="flex w-full max-w-cw flex-col gap-20">
 	<h1>SERVICES</h1>
 	<div class="flex flex-col gap-20">
 		{#each services as category (category.name)}
 			<div class="flex flex-col gap-10">
-				<img class="rounded-full outline hover:scale-150" src={category.image} alt="" />
+				<div class="flex justify-center gap-4">
+					<img class="w-[200px] rounded-md outline" src={category.image} alt="" />
+					<img class="w-[200px] rounded-md outline" src={category.image} alt="" />
+					<img class="w-[200px] rounded-md outline" src={category.image} alt="" />
+				</div>
 				<section class="flex flex-col gap-1">
 					<h2 class="mb-2 text-center text-2xl">{category.name}</h2>
 					<hr class=" mb-2 border border-gray-400" />
@@ -58,7 +62,7 @@
 					<nav>
 						<ul class="flex flex-col gap-2">
 							{#each category.serviceList as service}
-								<li class="flex justify-between gap-2 border-b border-slate-50 font-semibold">
+								<li class="flex justify-between gap-2 border-b border-slate-200 font-semibold">
 									<span>{service.name}</span>
 									{#if service.discount}
 										<span class="text-[#1f8900]">{service.discount}</span>

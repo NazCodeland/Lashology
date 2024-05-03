@@ -4,7 +4,7 @@
 	import Hamburger from './Hamburger.svelte';
 </script>
 
-<header class="sticky top-0 z-10 flex w-full justify-between bg-white p-4">
+<header class="sticky top-0 z-10 flex w-full justify-between bg-white pb-4">
 	<Logo />
 	<Hamburger />
 </header>

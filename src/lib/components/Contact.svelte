@@ -3,14 +3,11 @@
 	import ContactForm from '$lib/components/Contact/ContactForm.svelte';
 </script>
 
-<div class="contact flex w-full flex-wrap items-center justify-evenly gap-16 p-4">
+<div class="flex flex-wrap items-center justify-evenly gap-32 bg-blue-50 p-4">
 	<ContactInfo />
 
 	<ContactForm />
 </div>
 
 <style>
-	.contact {
-		grid-column: fw;
-	}
 </style>

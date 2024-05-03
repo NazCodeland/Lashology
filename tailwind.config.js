@@ -15,6 +15,10 @@ export default {
         phone: '320px', // sm
         tablet: '640px', // md
         desktop: '1024px', // lg 
+      },
+      maxWidth: {
+        "cw": "920px",// full site width
+        "fw": "1440px" // full site width
       }
     }
   }

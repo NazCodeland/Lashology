@@ -35,9 +35,9 @@
 	}
 </script>
 
-<article class="flex flex-col gap-20">
+<section class="flex flex-col gap-20">
 	<h1>GALLERY</h1>
-	<section
+	<article
 		class="grid grid-cols-[repeat(auto-fit,minmax(248px,1fr))] place-content-center gap-4 rounded-md
 		bg-[#f5f5dc] p-4">
 		{#each images as image}
@@ -54,8 +54,8 @@
 				</span>
 			</div>
 		{/each}
-	</section>
-</article>
+	</article>
+</section>
 
 <style>
 	img {
